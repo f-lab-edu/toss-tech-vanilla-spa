@@ -1,10 +1,5 @@
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  // header 
+import Header from "./components/header";
 
-  // main contents
-  <main>
-    Hello World!
-  </main>
-  
-  //  footer
+document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+  ${Header}
 `;
