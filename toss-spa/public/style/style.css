@@ -1,2 +1,84 @@
 @import "reset.css";
+@import "common.css";
 
+/* 1rem -> 10px */
+
+/* tech, design 공통 스타일 */
+
+main {
+  max-width: 114rem;
+  margin: 5.2rem auto 19.2rem;
+}
+
+.main-wrap {
+  width: 92%;
+  margin: 0 auto;
+}
+
+.main-wrap .content-title {
+  padding: 2rem 0;
+  margin-bottom: 3.2rem;
+  font-size: 3.6rem;
+  font-weight: bold;
+}
+
+.main-wrap .item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem 0;
+  padding-top: 1.4rem;
+}
+
+.item-list li > a {
+  display: flex;
+  align-items: center;
+  gap: 0 4.8rem;
+}
+
+.list-img img {
+  width: 24rem;
+  height: 24rem;
+  object-fit: cover;
+  border-radius: 1.6rem;
+  transition: all 0.2s ease-in-out;
+}
+.item-list li:hover img {
+  box-shadow: rgba(0, 0, 33, 0.07) 0px 1.6rem 2.24rem 0.48rem, rgba(0, 0, 33, 0.05) 0 0.32rem 1.6rem 0, rgba(0, 0, 33, 0.07) 0px 0px 1px 0px;
+  -webkit-transform: translate3D(0, -3%, 0);
+  -moz-transform: translate3D(0, -3%, 0);
+  -ms-transform: translate3D(0, -3%, 0);
+  transform: translate3D(0, -3%, 0);
+}
+.item-list h3 {
+  margin-bottom: 1.4rem;
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #333d4b;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  transition: color 0.3s ease;
+  -webkit-line-clamp: 2;
+  -webkit-transition: color 0.3s ease;
+}
+
+.item-list a:hover h3 {
+  color: #3182f6;
+}
+
+.item-list .list-content p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #4e5968;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.item-list .list-content span {
+  line-height: 1.6;
+  color: #8b95a1;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
