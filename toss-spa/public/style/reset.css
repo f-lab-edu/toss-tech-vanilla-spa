@@ -117,3 +117,8 @@ a {
   text-decoration: none;
   color: #333;
 }
+
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
