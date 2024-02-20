@@ -3,7 +3,7 @@ const Header = `
         <div class="header-wrap">
             <div class="header-wrap__inner">
                 <h1 id="logo">
-                    <img src="/logo.png" alt="tosstech"/>
+                    <img src="/img/common/logo.png" alt="tosstech"/>
                 </h1>
                 <ul>
                     <li><a href="javascript:;">디자인</a></li>
