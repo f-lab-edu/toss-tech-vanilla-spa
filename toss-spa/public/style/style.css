@@ -82,3 +82,41 @@ main {
   font-size: 1.5rem;
   font-weight: 400;
 }
+
+/* hire-section */
+
+.hire-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2.4rem;
+  background: rgba(2, 9, 19, 0.91);
+  color: #e5e8eb;
+}
+
+.hire-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0 2rem;
+  max-width: 64rem;
+}
+
+.hire-wrap > img {
+  width: 18.6rem;
+}
+
+.hire-content .content-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.hire-content > p {
+  margin-top: 0.8rem;
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+
+.hire-content > .toss-btn {
+  margin-top: 2.4rem;
+}
