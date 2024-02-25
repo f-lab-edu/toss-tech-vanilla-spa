@@ -1,7 +1,7 @@
 import Footer from "./components/footer";
 import Header from "./components/header";
-import HireSection from "./components/hire-section";
-import NotFound from "./pages/not-found";
+import HireSection from "./components/hireSection";
+import NotFound from "./pages/notFound";
 import { IRouter, tossRouter } from "./router";
 import { navigate } from "./util/navigate";
 
