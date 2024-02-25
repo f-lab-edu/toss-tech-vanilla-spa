@@ -1,4 +1,6 @@
-const Design = `
+class Design {
+  template() {
+    `
 <main>
     <div class="main-wrap">
         <h2 class="content-title">디자인</h2>
@@ -35,5 +37,7 @@ const Design = `
     </div>
 </main>
 `;
+  }
+}
 
-export default Design;
+export default new Design();

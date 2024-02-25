@@ -1,4 +1,6 @@
-const Footer = `
+class Footer {
+  template() {
+    `
     <footer>
         <div class="footer-wrap">
             <div class="footer-site">
@@ -61,5 +63,7 @@ const Footer = `
         </div>
     </footer>
 `;
+  }
+}
 
-export default Footer;
+export default new Footer();

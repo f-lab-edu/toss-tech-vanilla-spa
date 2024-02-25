@@ -1,4 +1,6 @@
-const HireSection = `
+class HireSection {
+  template() {
+    `
     <section class="hire-section">
         <div class="hire-wrap">
             <img src="/img/website_code_blue_alpha.png" alt="" />
@@ -10,5 +12,7 @@ const HireSection = `
         </div>
     </section>
 `;
+  }
+}
 
-export default HireSection;
+export default new HireSection();

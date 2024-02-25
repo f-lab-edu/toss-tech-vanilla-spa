@@ -1,4 +1,6 @@
-const Header = `
+class Header {
+  template() {
+    return `
     <header>
         <div class="header-wrap">
             <div class="header-wrap__inner">
@@ -6,8 +8,8 @@ const Header = `
                     <img src="/img/common/logo.png" alt="tosstech"/>
                 </h1>
                 <ul>
-                    <li><a href="javascript:;">디자인</a></li>
-                    <li><a href="javascript:;">개발</a></li>
+                    <li><a id="designLink" href="/design">디자인</a></li>
+                    <li><a id="techLink" href="/tech">개발</a></li>
                     <li><button class="toss-btn">채용 바로가기</button></li>
                 </ul>
             </div>
@@ -15,5 +17,6 @@ const Header = `
         </div>
     </header>
 `;
-
-export default Header;
+  }
+}
+export default new Header();
