@@ -1,6 +1,6 @@
-import Footer from "./components/footer";
-import Header from "./components/header";
-import HireSection from "./components/hire-section";
+import Footer from "./components/common/footer";
+import Header from "./components/common/header";
+import HireSection from "./components/common/hire-section";
 import NotFound from "./pages/not-found";
 import { IRouter, tossRouter } from "./router";
 import { navigate } from "./util/navigate";
