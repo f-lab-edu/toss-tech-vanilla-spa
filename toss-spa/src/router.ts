@@ -3,7 +3,7 @@ import Tech from "./pages/tech";
 
 export interface IRouter {
   path: string;
-  view: () => void;
+  view: () => string;
 }
 
 export const tossRouter: IRouter[] = [

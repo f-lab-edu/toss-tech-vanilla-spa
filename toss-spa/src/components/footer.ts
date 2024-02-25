@@ -1,6 +1,6 @@
 class Footer {
   template() {
-    `
+    return `
     <footer>
         <div class="footer-wrap">
             <div class="footer-site">

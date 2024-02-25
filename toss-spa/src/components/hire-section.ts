@@ -1,6 +1,6 @@
 class HireSection {
   template() {
-    `
+    return `
     <section class="hire-section">
         <div class="hire-wrap">
             <img src="/img/website_code_blue_alpha.png" alt="" />
