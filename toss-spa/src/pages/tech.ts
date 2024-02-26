@@ -1,4 +1,4 @@
-import ContentList from "../components/content-list";
+import ContentList from "../components/contentList";
 
 const List = new ContentList("tech");
 

@@ -4,7 +4,9 @@ import HireSection from "./components/common/hire-section";
 import NotFound from "./pages/not-found";
 import { IRouter, tossRouter } from "./router";
 import { navigate } from "./util/navigate";
+import { worker } from "./mocks/browser";
 
+worker.start();
 const router = tossRouter;
 
 export const App = async () => {
