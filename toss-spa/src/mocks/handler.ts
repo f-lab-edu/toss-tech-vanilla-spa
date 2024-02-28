@@ -1,11 +1,12 @@
 import { http, HttpResponse } from "msw";
-
+import techData from "./techData.json";
+import designData from "./designData.json";
 export const handlers = [
-  http.get("/tech", () => {
-    return HttpResponse.json([{ id: 1, title: "dongmin", desc: "qlsnaos12@naver.com", date: "2024.02.05" }]);
+  http.get("/api/tech", () => {
+    return HttpResponse.json(techData);
   }),
 
-  http.get("/design", () => {
-    return HttpResponse.json([{ id: 1, title: "dongmin", desc: "qlsnaos12@naver.com", date: "2024.02.05" }]);
+  http.get("/api/design", () => {
+    return HttpResponse.json(designData);
   }),
 ];

@@ -6,10 +6,11 @@ import { IRouter, tossRouter } from "./router";
 import { navigate } from "./util/navigate";
 import { worker } from "./mocks/browser";
 
-worker.start();
 const router = tossRouter;
 
 export const App = async () => {
+  await worker.start();
+
   const pageMatch = router.map((route: IRouter) => {
     return {
       route,
@@ -27,10 +28,7 @@ export const App = async () => {
     ${Footer.template()}
   `;
 };
-
-App();
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   document.body.addEventListener("click", (e) => {
     if (e.target !== null) {
       const target = e.target as HTMLElement;
