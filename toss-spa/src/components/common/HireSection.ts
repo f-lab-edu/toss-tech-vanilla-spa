@@ -1,5 +1,8 @@
-const HireSection = `
-    <section class="hire-section">
+import Component from "../../core/Component";
+
+export default class HireSection extends Component {
+  template() {
+    return `
         <div class="hire-wrap">
             <img src="/img/website_code_blue_alpha.png" alt="" />
             <div class="hire-content">
@@ -8,7 +11,6 @@ const HireSection = `
                 <button class="toss-btn">채용 중인 공고 보기</button>
             </div>
         </div>
-    </section>
 `;
-
-export default HireSection;
+  }
+}

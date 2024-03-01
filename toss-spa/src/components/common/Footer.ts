@@ -1,5 +1,8 @@
-const Footer = `
-    <footer>
+import Component from "../../core/Component";
+
+export default class Footer extends Component {
+  template() {
+    return `
         <div class="footer-wrap">
             <div class="footer-site">
                 <ul>
@@ -59,7 +62,6 @@ const Footer = `
                 </li>
             </ul>
         </div>
-    </footer>
 `;
-
-export default Footer;
+  }
+}

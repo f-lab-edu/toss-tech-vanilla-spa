@@ -120,3 +120,17 @@ main {
 .hire-content > .toss-btn {
   margin-top: 2.4rem;
 }
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-size: 10rem;
+  font-weight: bold;
+}
+
+.not-found span {
+  color: #df2626;
+}

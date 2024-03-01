@@ -1,5 +1,8 @@
-const Header = `
-    <header>
+import Component from "../../core/Component";
+
+export default class Header extends Component {
+  template() {
+    return `
         <div class="header-wrap">
             <div class="header-wrap__inner">
                 <h1 id="logo">
@@ -13,7 +16,6 @@ const Header = `
             </div>
 
         </div>
-    </header>
-`;
-
-export default Header;
+    }`;
+  }
+}
