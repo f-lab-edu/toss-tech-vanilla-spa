@@ -151,7 +151,6 @@ footer {
 .toss-btn {
   padding: 7px 12px;
   background-color: #3182f6;
-  color: #fff;
   border-radius: 6px;
   border: none;
   outline: none;
@@ -161,4 +160,8 @@ footer {
 
 .toss-btn:hover {
   background-color: #1b64da;
+}
+
+.toss-btn > a {
+  color: #fff !important;
 }

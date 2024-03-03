@@ -11,7 +11,7 @@ export default class Header extends Component {
                 <ul>
                     <li><a href="/design">디자인</a></li>
                     <li><a href="/tech">개발</a></li>
-                    <li><button class="toss-btn">채용 바로가기</button></li>
+                    <li><button class="toss-btn"><a href="https://toss.im/career/jobs">채용 바로가기</a></button></li>
                 </ul>
             </div>
 
