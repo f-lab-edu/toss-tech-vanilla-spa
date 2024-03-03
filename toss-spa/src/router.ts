@@ -5,17 +5,23 @@ interface IRouter {
   view: () => void;
 }
 
+export const PATH = {
+  TECH: "/tech",
+  DESIGN: "/design",
+  DETAIL: "/detail",
+} as const;
+
 const routes: IRouter[] = [
   {
-    path: "/tech",
+    path: PATH.TECH,
     view: () => new View(document.querySelector("main")),
   },
   {
-    path: "/design",
+    path: PATH.DESIGN,
     view: () => new View(document.querySelector("main")),
   },
   {
-    path: "/detail",
+    path: PATH.DETAIL,
     view: () => new View(document.querySelector("main")),
   },
 ];
@@ -46,17 +52,16 @@ export default class Router {
   }
 
   checkRoutes() {
-    const path = window.location.pathname;
-
     // /tech로 리다이렉팅
-    if (path === "/") {
+
+    if (window.location.pathname === "/") {
       history.pushState("", "", "/tech");
     }
 
     const pageMatch = routes.map((route: IRouter) => {
       return {
         route,
-        isMatch: path === route.path,
+        isMatch: window.location.pathname === route.path,
       };
     });
 
