@@ -1,4 +1,5 @@
 import Component from "../../core/Component";
+import DetailPage from "../../pages/DetailPage";
 import MainPage from "../../pages/MainPage";
 
 export default class View extends Component {
@@ -13,7 +14,12 @@ export default class View extends Component {
   mounted() {
     if (this.$target) {
       // 만약 path가 DetailPage가 아니라면
-      new MainPage(this.$target.querySelector(".main-wrap"));
+      const path = window.location.pathname;
+      if (path === "/design" || path === "/tech") {
+        new MainPage(this.$target.querySelector(".main-wrap"), { type: path.replace("/", "") });
+      } else if (path === "/detail") {
+        new DetailPage(this.$target.querySelector(".main-wrap"));
+      }
     }
   }
 }

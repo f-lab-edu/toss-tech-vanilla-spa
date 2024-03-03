@@ -3,22 +3,31 @@ import Header from "./components/common/Header";
 import HireSection from "./components/common/HireSection";
 import Component from "./core/Component";
 import View from "./components/common/View";
+import Router from "./router";
+import NotFound from "./pages/NotFound";
 // import NotFound from "./pages/NotFound";
+
+const router = new Router();
+const checkedRoute = router.checkRoutes();
+
+router.init();
 
 export default class App extends Component {
   template() {
-    // if(라우터 path에 포함된다면 아래 클래스들 그렇지 않다면 404페이지만)
-    return `
-      <header></header>
-      <main></main>
-      <section class="hire-section"></section>
-      <footer></footer>
-    `;
-    // return `${NotFound.template()}`;
+    return checkedRoute
+      ? `
+    <header></header>
+    <main></main>
+    <section class="hire-section"></section>
+    <footer></footer>
+  `
+      : `${NotFound.template()}`;
   }
 
+  setup() {}
+
   mounted() {
-    if (this.$target) {
+    if (this.$target && checkedRoute) {
       new Header(this.$target.querySelector("header"));
       new View(this.$target.querySelector("main"));
       new HireSection(this.$target.querySelector(".hire-section"));

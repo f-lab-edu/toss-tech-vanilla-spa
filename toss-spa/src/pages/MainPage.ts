@@ -3,9 +3,9 @@ import Component from "../core/Component";
 
 export default class MainPage extends Component {
   template() {
-    return `<h2 class="content-title">개발</h2>
+    return `<h2 class="content-title">${this.props.type === "tech" ? "개발" : "디자인"}</h2>
     
-        <section class="tech">
+        <section class="${this.props.type}">
             <ul class="item-list">
 
             </ul>
@@ -14,7 +14,7 @@ export default class MainPage extends Component {
 
   mounted() {
     if (this.$target) {
-      new ItemList(this.$target.querySelector(".item-list"));
+      new ItemList(this.$target.querySelector(".item-list"), { type: this.props.type });
     }
   }
 }
