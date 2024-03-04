@@ -3,9 +3,8 @@ import Header from "./components/common/Header";
 import HireSection from "./components/common/HireSection";
 import Component from "./core/Component";
 import View from "./components/common/View";
-import Router from "./router";
+import Router from "./router/index";
 import NotFound from "./pages/NotFound";
-// import NotFound from "./pages/NotFound";
 
 const router = new Router();
 const checkedRoute = router.checkRoutes();

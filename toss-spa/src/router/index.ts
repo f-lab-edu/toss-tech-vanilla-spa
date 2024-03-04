@@ -1,4 +1,4 @@
-import { routes, parsePath, getUrlParams } from "./utils/RouterFunctions";
+import { routes, parsePath, getUrlParams } from "./route";
 
 export interface IRouter {
   path: string;
