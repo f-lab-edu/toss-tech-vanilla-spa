@@ -162,6 +162,7 @@ footer {
   background-color: #1b64da;
 }
 
+header .toss-btn > a,
 .toss-btn > a {
-  color: #fff !important;
+  color: #fff;
 }

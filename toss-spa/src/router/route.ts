@@ -1,26 +1,20 @@
 import View from "../components/common/View";
 import { IRouter, IRouterWithParams } from "../router";
 
-export const ROUTE_PARAMETER_REGEXP = /:(\w+)/g; // :name, :song등 path parameters를 매칭하기 위한 정규표현식
-export const URL_REGEXP = "([^\\/]+)";
-
-export const PATH = {
-  TECH: "/tech",
-  DESIGN: "/design",
-  DETAIL: "/detail/:id",
-} as const;
+const ROUTE_PARAMETER_REGEXP = /:(\w+)/g; // :name, :song등 path parameters를 매칭하기 위한 정규표현식
+const URL_REGEXP = "([^\\/]+)";
 
 export const routes: IRouter[] = [
   {
-    path: PATH.TECH,
+    path: "/tech",
     view: () => new View(document.querySelector("main")),
   },
   {
-    path: PATH.DESIGN,
+    path: "/design",
     view: () => new View(document.querySelector("main")),
   },
   {
-    path: PATH.DETAIL,
+    path: "/detail/:id",
     view: (params) => new View(document.querySelector("main"), { params }),
   },
 ];
@@ -41,7 +35,7 @@ export const parsePath = (fragment: string) => {
 };
 
 export const getUrlParams = (route: IRouterWithParams, path: string) => {
-  const params: { [key: string]: string } = {};
+  const params: Record<string, string> = {};
   const matches = path.match(route.fragmentRegExp);
 
   if (!matches) return;
