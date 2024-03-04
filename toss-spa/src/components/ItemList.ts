@@ -5,7 +5,7 @@ export default class ItemList extends Component {
     return this.props.type === "tech"
       ? `
         <li>
-            <a href="/detail">
+            <a href="/detail/1">
             <div class="list-img">
                 <img src="https://static.toss.im/assets/payments/contents/payments-frontend-thumb-2.jpg" alt="" />
             </div>
@@ -19,7 +19,7 @@ export default class ItemList extends Component {
         `
       : `
         <li>
-            <a href="/detail">
+            <a href="/detail/2">
             <div class="list-img">
                 <img src="https://static.toss.im/assets/payments/contents/contents-fx-thumb.jpg" alt="" />
             </div>

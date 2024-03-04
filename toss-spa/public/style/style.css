@@ -134,3 +134,7 @@ main {
 .not-found span {
   color: #df2626;
 }
+
+.detail {
+  font-size: 3.6rem;
+}

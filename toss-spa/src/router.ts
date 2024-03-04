@@ -1,30 +1,15 @@
-import View from "./components/common/View";
+import { routes, parsePath, getUrlParams } from "./utils/RouterFunctions";
 
-interface IRouter {
+export interface IRouter {
   path: string;
-  view: () => void;
+  view: (params?: { [key: string]: string }) => void;
 }
 
-export const PATH = {
-  TECH: "/tech",
-  DESIGN: "/design",
-  DETAIL: "/detail",
-} as const;
-
-const routes: IRouter[] = [
-  {
-    path: PATH.TECH,
-    view: () => new View(document.querySelector("main")),
-  },
-  {
-    path: PATH.DESIGN,
-    view: () => new View(document.querySelector("main")),
-  },
-  {
-    path: PATH.DETAIL,
-    view: () => new View(document.querySelector("main")),
-  },
-];
+export interface IRouterWithParams {
+  route: IRouter;
+  fragmentRegExp: RegExp;
+  params: string[];
+}
 
 export default class Router {
   init() {
@@ -61,14 +46,19 @@ export default class Router {
     const pageMatch = routes.map((route: IRouter) => {
       return {
         route,
-        isMatch: window.location.pathname === route.path,
+        ...parsePath(route.path),
       };
     });
 
-    let matchRoute = pageMatch.find((route) => route.isMatch);
-    if (matchRoute) {
-      // 매칭된 라우트의 view 메서드를 호출하여 페이지 일부 업데이트
-      matchRoute.route.view();
+    let matchRoute = pageMatch.find((route) => route.fragmentRegExp.test(window.location.pathname));
+
+    if (matchRoute?.params.length) {
+      const urlParams = getUrlParams(matchRoute, window.location.pathname);
+      matchRoute.route.view(urlParams);
+    } else {
+      if (matchRoute) {
+        matchRoute.route.view();
+      }
     }
     return matchRoute?.route;
   }

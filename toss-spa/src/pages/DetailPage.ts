@@ -2,8 +2,10 @@ import Component from "../core/Component";
 
 export default class DetailPage extends Component {
   template() {
-    return `detail`;
+    return `<div class="detail">detail ${this.props?.params.id}</div>`;
   }
 
-  mounted() {}
+  mounted() {
+    console.log("Params:", this.props?.params);
+  }
 }
