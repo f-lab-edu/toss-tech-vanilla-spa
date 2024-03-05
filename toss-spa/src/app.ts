@@ -5,11 +5,16 @@ import Component from "./core/Component";
 import View from "./components/common/View";
 import Router from "./router/index";
 import NotFound from "./pages/NotFound";
+import { worker } from "./mocks/browser";
 
 const router = new Router();
 const checkedRoute = router.checkRoutes();
 
 router.init();
+
+if (process.env.NODE_ENV === "development") {
+  await worker.start();
+}
 
 export default class App extends Component {
   template() {
