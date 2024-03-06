@@ -22,5 +22,29 @@
     "desc": "UX Research Partner로 입사해 유저 리서치팀에 온보딩했던 과정과 온보딩 후 어떻게 일하고 있는지 들려드릴게요.",
     "date": "2024.02.15",
     "type": "design"
+  },
+  {
+    "id": 4,
+    "title": "달리는 기차의 바퀴 교체하기 2. Restructuring",
+    "img": "https://static.toss.im/assets/payments/contents/train-payments-thumb.jpg",
+    "desc": "이미 운영 중인 제품을 전부 갈아엎고 다시 만드는 경험을 하기는 어려운데요. 운 좋게 팀 내 공감대가 형성되어 여러 팀원과 하나의 제품을 온전히 개선해 볼 수 있었어요. 앞선 내용에 이어서 이 글에서는 구체적으로 어떻게 개선했는지 소개할게요.",
+    "date": "2024.02.23",
+    "type": "tech"
+  },
+  {
+    "id": 5,
+    "title": "OpenZFS로 성능과 비용, 두 마리 토끼 잡기",
+    "img": "https://static.toss.im/assets/payments/contents/test-thumb-2.jpg",
+    "desc": "토스페이먼츠 DevOps 엔지니어가 스토리지 파일 시스템을 OpenZFS로 변경하면서 성능은 높이고 비용은 절감한 과정을 소개합니다.",
+    "date": "2024.02.20",
+    "type": "tech"
+  },
+  {
+    "id": 6,
+    "title": "캐시 문제 해결 가이드 - DB 과부하 방지 실전 팁",
+    "img": "https://static.toss.im/assets/payments/contents/app-thumb.jpg",
+    "desc": "대용량 트래픽 환경에서 캐시를 사용할 때 주의해야할 위험 상황과 예방법을 소개합니다.",
+    "date": "2024.02.15",
+    "type": "tech"
   }
 ]

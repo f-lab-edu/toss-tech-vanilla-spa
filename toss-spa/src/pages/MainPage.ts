@@ -10,10 +10,8 @@ export interface IListData {
   type: string;
 }
 
-console.log("render");
 export default class MainPage extends Component {
   template() {
-    console.log("template");
     return `
       <h2 class="content-title">${this.props.type === "tech" ? "개발" : "디자인"}</h2>
       
@@ -25,7 +23,6 @@ export default class MainPage extends Component {
   }
 
   mounted() {
-    console.log("mount");
     if (!this.state) {
       this.getData();
     }
@@ -34,9 +31,8 @@ export default class MainPage extends Component {
   getData() {
     (async () => {
       if (this.props.type) {
-        console.log("getData");
         try {
-          const response = await fetch(`/api/${this.props.type}`);
+          const response = await fetch(`/api/list`);
           const data = await response.json();
           this.updated(data);
           if (this.$target) {
@@ -50,7 +46,6 @@ export default class MainPage extends Component {
   }
 
   updated(data: IListData[]) {
-    console.log("update");
     this.setState({ listHtml: data });
   }
 }

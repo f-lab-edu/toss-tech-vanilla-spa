@@ -19,8 +19,10 @@ export default class Router {
           const target = e.target as HTMLElement;
           const anchorTarget = target.closest("a");
           if (!(anchorTarget instanceof HTMLAnchorElement)) return;
-
           e.preventDefault();
+          // MainPage 전환시 API 호출 방지
+          if (anchorTarget.getAttribute("href") === window.location.pathname) return;
+
           history.pushState("", "", anchorTarget.href);
           this.checkRoutes();
         }

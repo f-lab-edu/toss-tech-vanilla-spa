@@ -4,7 +4,8 @@ import { IListData } from "../pages/MainPage";
 export default class ItemList extends Component {
   template() {
     const list = this.props.listHtml;
-    return list
+    const filteredList = list.filter((v: IListData) => v.type === this.props.type);
+    return filteredList
       .map((v: IListData) => {
         return `
             <li>
@@ -12,7 +13,7 @@ export default class ItemList extends Component {
                 <div class="list-img">
                     <img src="${v.img}" alt="" />
                 </div>
-                
+
                 <div class="list-content">
                     <h3>${v.title}</h3>
                     <p>${v.desc}</p>

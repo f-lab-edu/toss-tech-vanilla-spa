@@ -1,13 +1,8 @@
 import { http, HttpResponse } from "msw";
-import techData from "./data/TechData.json";
-import designData from "./data/DesignData.json";
+import techData from "./data/ListData.json";
 
 export const handlers = [
-  http.get("/api/tech", () => {
+  http.get("/api/list", () => {
     return HttpResponse.json(techData);
-  }),
-
-  http.get("/api/design", () => {
-    return HttpResponse.json(designData);
   }),
 ];
