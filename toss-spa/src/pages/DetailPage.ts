@@ -1,10 +1,11 @@
+import Spinner from "../components/common/Spinner";
 import Component from "../core/Component";
 import { IListData } from "./MainPage";
 
 export default class DetailPage extends Component {
   template() {
     if (!this.state) {
-      return "";
+      return `${Spinner.template()}`;
     }
     return `
     <div class="detail">

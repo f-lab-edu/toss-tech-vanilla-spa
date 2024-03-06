@@ -1,4 +1,5 @@
 import ItemList from "../components/ItemList";
+import Spinner from "../components/common/Spinner";
 import Component from "../core/Component";
 
 export interface IListData {
@@ -12,6 +13,9 @@ export interface IListData {
 
 export default class MainPage extends Component {
   template() {
+    if (!this.state) {
+      return `${Spinner.template()}`;
+    }
     return `
       <h2 class="content-title">${this.props.type === "tech" ? "개발" : "디자인"}</h2>
       
