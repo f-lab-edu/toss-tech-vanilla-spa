@@ -9,6 +9,9 @@ export interface IListData {
   desc: string;
   date: string;
   type: string;
+  content: string;
+  auth: string;
+  avatar: string;
 }
 
 export default class MainPage extends Component {

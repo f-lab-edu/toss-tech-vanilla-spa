@@ -151,6 +151,33 @@ main {
   border-radius: 1.2rem;
 }
 
+.detail .auth-profile {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.detail .auth-profile > img {
+  width: 4.8rem;
+  height: 4.8rem;
+  margin-right: 2rem;
+  border-radius: 50%;
+}
+
+.detail .profile-content .profile-name {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: rgb(78, 89, 104);
+  white-space: nowrap;
+}
+
+.detail .profile-content .profile-date {
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: rgb(139, 149, 161);
+  line-height: 1.5;
+}
+
 .detail h2 {
   margin-top: 2rem;
   font-size: 4.8rem;
@@ -160,7 +187,8 @@ main {
 .detail p {
   margin-top: 5.4rem;
   font-size: 1.7rem;
-  line-height: 1.5;
+  line-height: 1.75;
+  word-break: keep-all;
 }
 
 /* spinner */
@@ -221,5 +249,4 @@ main {
     stroke-dashoffset: 187;
     transform: rotate(450deg);
   }
-
 }
