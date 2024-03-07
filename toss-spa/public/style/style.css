@@ -6,13 +6,14 @@
 /* tech, design 공통 스타일 */
 
 main {
-  max-width: 114rem;
+  max-width: 98rem;
   margin: 5.2rem auto 19.2rem;
 }
 
 .main-wrap {
   width: 92%;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .main-wrap .content-title {
@@ -136,5 +137,89 @@ main {
 }
 
 .detail {
-  font-size: 3.6rem;
+  margin: 0 auto;
+  width: 92%;
+  max-width: 64.4rem;
+  line-height: 1.25;
+  color: rgb(51, 61, 75);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.detail > img {
+  width: 100%;
+  border-radius: 1.2rem;
+}
+
+.detail h2 {
+  margin-top: 2rem;
+  font-size: 4.8rem;
+  font-weight: bold;
+}
+
+.detail p {
+  margin-top: 5.4rem;
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+
+/* spinner */
+
+.spinner-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70rem;
+}
+
+.spinner {
+  animation: rotator 1.4s linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+.spinner .path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% {
+    stroke: #4285f4;
+  }
+  25% {
+    stroke: #de3e35;
+  }
+  50% {
+    stroke: #f7c223;
+  }
+  75% {
+    stroke: #1b9a59;
+  }
+  100% {
+    stroke: #4285f4;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg);
+  }
+
 }

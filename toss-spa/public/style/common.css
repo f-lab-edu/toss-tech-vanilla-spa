@@ -164,5 +164,6 @@ footer {
 
 header .toss-btn > a,
 .toss-btn > a {
+  padding: 0;
   color: #fff;
 }
