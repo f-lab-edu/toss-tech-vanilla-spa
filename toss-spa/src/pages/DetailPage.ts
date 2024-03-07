@@ -9,9 +9,16 @@ export default class DetailPage extends Component {
     }
     return `
     <div class="detail">
-      <img src="${this.state?.DetailHtml.img}" alt="${this.state?.DetailHtml.title}" />
-      <h2>${this.state?.DetailHtml.title}</h2>
-      <p>${this.state.DetailHtml.desc}</p>
+      <img src="${this.state?.DetailData.img}" alt="${this.state?.DetailData.title}" />
+      <h2>${this.state?.DetailData.title}</h2>
+      <div class="auth-profile">
+        <img src="${this.state?.DetailData.avatar}">
+        <div class="profile-content">
+          <div class="profile-name">${this.state.DetailData.auth}</div>
+          <span class="profile-date">${this.state.DetailData.date}</span>
+        </div>
+      </div>
+      <p>${this.state.DetailData.content}</p>
     </div>
     `;
   }
@@ -29,7 +36,7 @@ export default class DetailPage extends Component {
         try {
           const response = await fetch(`/api/list`);
           const data = await response.json();
-          const detailData = data.find((v: IListData) => Number(v.id) === Number(propsId));
+          const detailData: IListData = data.find((v: IListData) => Number(v.id) === Number(propsId));
           this.updated(detailData);
         } catch (err) {
           console.dir(err);
@@ -39,6 +46,6 @@ export default class DetailPage extends Component {
   }
 
   updated(data: IListData) {
-    this.setState({ DetailHtml: data });
+    this.setState({ DetailData: data });
   }
 }
