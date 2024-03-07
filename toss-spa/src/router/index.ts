@@ -18,12 +18,17 @@ export default class Router {
         if (e.target !== null) {
           const target = e.target as HTMLElement;
           const anchorTarget = target.closest("a");
-          if (!(anchorTarget instanceof HTMLAnchorElement)) return;
-          e.preventDefault();
-          // MainPage 전환시 API 호출 방지
-          if (anchorTarget.getAttribute("href") === window.location.pathname) return;
+          if (!anchorTarget) return;
+          const { navigate } = anchorTarget.dataset;
 
-          history.pushState("", "", anchorTarget.href);
+          // MainPage 전환시 API 호출 방지
+          if (!anchorTarget.matches("a[data-navigate]") || navigate === window.location.pathname) return;
+          if (navigate === "/") {
+            history.pushState("", "", "/tech");
+          } else {
+            history.pushState("", "", navigate);
+          }
+
           this.checkRoutes();
         }
       });
@@ -39,12 +44,6 @@ export default class Router {
   }
 
   checkRoutes() {
-    // /tech로 리다이렉팅
-
-    if (window.location.pathname === "/") {
-      history.pushState("", "", "/tech");
-    }
-
     const pageMatch = routes.map((route: IRouter) => {
       return {
         route,

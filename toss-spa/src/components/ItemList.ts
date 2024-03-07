@@ -9,7 +9,7 @@ export default class ItemList extends Component {
       .map((v: IListData) => {
         return `
             <li>
-              <a href="/detail/${v.id}">
+              <a class="navigate" href="javascript:void(0);" data-navigate="/detail/${v.id}">
                 <div class="list-img">
                     <img src="${v.img}" alt="" />
                 </div>
