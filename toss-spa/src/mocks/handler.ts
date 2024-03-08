@@ -9,8 +9,8 @@ export const handlers = [
 
   // DetailPage에서 params로 받은것에 대한 내용
   http.get("/api/list/:id", (req) => {
-    console.log(req.params.id);
-    const filteredListData = ListData.find((item) => item.id === Number(req.params.id));
+    const { id } = req.params;
+    const filteredListData = ListData.find((item) => item.id === Number(id));
     return HttpResponse.json(filteredListData);
   }),
 ];
