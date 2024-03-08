@@ -20,7 +20,6 @@ export default class Router {
           const anchorTarget = target.closest("a");
           if (!anchorTarget) return;
           const { navigate } = anchorTarget.dataset;
-
           // MainPage 전환시 API 호출 방지
           if (!anchorTarget.matches("a[data-navigate]") || navigate === window.location.pathname) return;
           if (navigate === "/") {
@@ -28,7 +27,7 @@ export default class Router {
           } else {
             history.pushState("", "", navigate);
           }
-
+          window.scrollTo(0, 0);
           this.checkRoutes();
         }
       });
@@ -44,6 +43,10 @@ export default class Router {
   }
 
   checkRoutes() {
+    if (window.location.pathname === "/") {
+      history.pushState("", "", "/tech");
+    }
+
     const pageMatch = routes.map((route: IRouter) => {
       return {
         route,
