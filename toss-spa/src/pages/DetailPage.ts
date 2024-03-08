@@ -34,10 +34,9 @@ export default class DetailPage extends Component {
       const propsId = this.props.params.id;
       if (propsId) {
         try {
-          const response = await fetch(`/api/list`);
+          const response = await fetch(`/api/list/${this.props.params.id}`);
           const data = await response.json();
-          const detailData: IListData = data.find((v: IListData) => Number(v.id) === Number(propsId));
-          this.updated(detailData);
+          this.updated(data);
         } catch (err) {
           console.dir(err);
         }

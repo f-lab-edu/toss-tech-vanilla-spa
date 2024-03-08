@@ -1,8 +1,16 @@
 import { http, HttpResponse } from "msw";
-import techData from "./data/ListData.json";
+import ListData from "./data/ListData.json";
 
 export const handlers = [
+  // MainPage의 list목록 전체
   http.get("/api/list", () => {
-    return HttpResponse.json(techData);
+    return HttpResponse.json(ListData);
+  }),
+
+  // DetailPage에서 params로 받은것에 대한 내용
+  http.get("/api/list/:id", (req) => {
+    console.log(req.params.id);
+    const filteredListData = ListData.find((item) => item.id === Number(req.params.id));
+    return HttpResponse.json(filteredListData);
   }),
 ];
