@@ -13,7 +13,7 @@ SPA구현을 위해 router는 어떻게 작성하는지, 그리고 리액트의 
 ### 실행 방법
 
 ```
-cd toss/spa
+cd toss-spa
 ```
 
 ```
