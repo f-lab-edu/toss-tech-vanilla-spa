@@ -4,10 +4,10 @@
 SPA구현을 위해 router는 어떻게 작성하는지, 그리고 리액트의 생명주기에 대해서 조금 더 공부해 볼 수 있었고 직접 만들어 본 좋은 기회가 되었습니다.
 
 ## 목차
-1. [실행 방법](#1-실행-방법)
-2. [페이지 미리보기](#2-페이지-미리보기)
-3. [주요 파일 및 코드](#3-주요-파일-및-코드)
-4. [추가 개발](#4-추가-개발)
+[1.실행 방법](#실행-방법)
+[2.페이지 미리보기](#페이지-미리보기)
+[3.주요 파일 및 코드](#주요-파일-및-코드)
+[4.추가 개발](#추가-개발)
 
 
 ### 실행 방법
@@ -38,8 +38,8 @@ npm run dev
 ``` javascript
 export default class Component {
   $target; //컴포넌트를 넣을 부모 요소
-  $props;
-  $state;
+  $props; // 부모로 부터 전달 받을 요소
+  $state; // 컴포넌트 state
 
   constructor($target, $props) {
     this.$target = $target;
@@ -49,22 +49,22 @@ export default class Component {
     this.render();
   }
 
-  setup() {}
+  setup() {} // 컴포넌트의 state 설정 및 초기화
 
-  mounted() {}
+  mounted() {} // 컴포넌트가 마운트 되었을때 실행
 
-  template() {
-    return '';
+  template() { // 컴포넌트의 UI를 구성하며 return
+    return ''; 
   }
 
-  render() {
+  render() { // 컴포넌트의 렌더링
     this.$target.innerHTML = this.template();
     this.mounted();
   }
 
-  setEvent() {}
+  setEvent() {} // 컴포넌트의 이벤트를 미리 설정
 
-  setState(newState) {
+  setState(newState) { // 컴포넌트의 state를 변경하고 리렌더링
     this.$state = { ...this.$state, ...newState };
     this.render();
   }
@@ -72,18 +72,7 @@ export default class Component {
 }
 ```
 
-모든 컴포넌트의 core가 되는 Component class의 코드로써 각각의 프로퍼티와 메서드의 역할을 정리하면 아래와 같습니다.
-
-- **this.$target**: 컴포넌트가 들어갈 부모 요소
-- **this.$props**: 부모로 부터 전달 받을 요소
-- **setup()**: 컴포넌트의 state 설정 및 초기화
-- **mounted()**: 컴포넌트가 마운트 되었을때 실행
-- **template()**: 컴포넌트의 UI를 구성하며 return
-- **render()**: 컴포넌트의 렌더링
-- **setEvent()**: 컴포넌트의 이벤트를 미리 설정
-- **setState()**: 컴포넌트의 state를 변경하고 리렌더링
-
-위 프로퍼티들과 메서드들로 구성이 되는 Component는 export default로 다른 컴포넌트에서 상속받아 사용이 가능하며 필요에 따라 오버라이딩하여 사용이 가능 합니다.
+모든 컴포넌트의 core가 되는 Component class의 코드로써 Component는 export default로 다른 컴포넌트에서 상속받아 사용이 가능하며 필요에 따라 오버라이딩하여 사용이 가능 합니다.
 
 class가 만들어질때 인자로 받은 target, props를 이 컴포넌트의 target과 props값으로 할당 해준 뒤, 순서에 맞게 setup으로 초기화를 해줍니다.
 
@@ -249,3 +238,8 @@ route는 history를 이용하여 구현했으며 해당 프로젝트는 총 3개
 
 개인적으로 흰색 화면이 보였다가 데이터가 바로 나오는것 보다는 로딩창을 보여준 후 데이터가 뜨는것이 더 자연스럽고 사용자 경험에 더 좋다고 생각하여 구현하게 되었습니다.
 
+<div align="right">
+  
+[목차로 돌아가기](#목차)
+
+</div>
